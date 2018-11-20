@@ -210,8 +210,6 @@ public class Server extends Thread {
                     }
                     break;
                 case 3443:
-
-
                     connectSQL.deletRow((int) is.readObject());
                     break;
 

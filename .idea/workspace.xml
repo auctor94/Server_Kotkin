@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69664313-3a37-42ad-9e45-bbfe25d7233f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Personnel/Personnel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/51b918da-5daf-40bb-9e32-4da9720ba90e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/51b918da-5daf-40bb-9e32-4da9720ba90e.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server_Kotkin/DBConnect/ConnectSQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server_Kotkin/DBConnect/DBProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server_Kotkin/Server/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBConnect/ConnectSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBConnect/ConnectSQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -59,12 +54,15 @@
     <session id="-538719024">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.66" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -82,13 +80,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="1258" />
-          <entry key="txt" value="21" />
+          <entry key="txt" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1258" />
-          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="PLAIN_TEXT" value="77" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.compare" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -98,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DBConnect/ConnectSQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="719">
-              <caret line="127" column="5" lean-forward="true" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+            <state relative-caret-position="1054">
+              <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#checkingAdmin#0;class#ConnectSQL#0" />
@@ -117,17 +120,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="285" column="27" selection-start-line="285" selection-start-column="27" selection-end-line="285" selection-end-column="27" />
+            <state relative-caret-position="263">
+              <caret line="252" column="49" selection-start-line="252" selection-start-column="49" selection-end-line="252" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#main#0;class#Server#0" />
                 <element signature="method#Server#0;class#Server#0" />
-                <element signature="e#1360#1408#0" />
                 <element signature="method#checkClient#0;class#Server#0" />
-                <element signature="method#menuAdmin#0;class#Server#0" />
                 <element signature="method#tableFXML#0;class#Server#0" />
-                <element signature="method#viewTableResult#0;class#Server#0" />
+                <element signature="method#regist#0;class#Server#0" />
               </folding>
             </state>
           </provider>
@@ -161,7 +162,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="745" />
@@ -170,51 +171,14 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Server_Kotkin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server_Kotkin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server_Kotkin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server_Kotkin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server_Kotkin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server_Kotkin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="DBConnect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server_Kotkin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server_Kotkin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Personnel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server_Kotkin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server_Kotkin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542199567150" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Course_Project_4_sem_saipis/Server" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542723143825" />
+    <property name="last_opened_file_path" value="E:/Programming/Java labs/webapptest" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -284,15 +248,26 @@
       <workItem from="1541508473577" duration="612000" />
       <workItem from="1541614962074" duration="9075000" />
       <workItem from="1542048309083" duration="1827000" />
-      <workItem from="1542193992055" duration="5234000" />
+      <workItem from="1542193992055" duration="9280000" />
+      <workItem from="1542292253382" duration="50000" />
+      <workItem from="1542572524590" duration="807000" />
+      <workItem from="1542618969411" duration="2906000" />
     </task>
+    <task id="LOCAL-00001" summary="&quot;Все куда-то движется, моя жоап, например, к дедлайну&quot;">
+      <created>1542199629578</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542199629578</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16748000" />
+    <option name="totallyTimeSpent" value="24557000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="697" height="745" extended-state="0" />
+    <frame x="676" y="0" width="697" height="745" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.48822606" />
@@ -304,13 +279,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32569557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32903227" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -331,14 +306,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;Все куда-то движется, моя жоап, например, к дедлайну&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Все куда-то движется, моя жоап, например, к дедлайну&quot;" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/DBConnect/DBProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -349,32 +325,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2761#2762#0" expanded="true" />
-            <element signature="e#2806#2807#0" expanded="true" />
-            <element signature="e#2852#2853#0" expanded="true" />
-            <element signature="e#2893#2894#0" expanded="true" />
-            <element signature="e#2933#2934#0" expanded="true" />
-            <element signature="e#2968#2969#0" expanded="true" />
-            <element signature="e#3016#3017#0" expanded="true" />
-            <element signature="e#3059#3060#0" expanded="true" />
-            <element signature="e#3110#3111#0" expanded="true" />
-            <element signature="e#3150#3151#0" expanded="true" />
-            <element signature="e#3200#3201#0" expanded="true" />
-            <element signature="e#3245#3246#0" expanded="true" />
-            <element signature="e#3296#3297#0" expanded="true" />
-            <element signature="e#3336#3337#0" expanded="true" />
-            <element signature="e#3385#3386#0" expanded="true" />
-            <element signature="e#3432#3433#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DBConnect/ConnectSQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="127" column="5" lean-forward="true" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+        <state relative-caret-position="1054">
+          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#checkingAdmin#0;class#ConnectSQL#0" />
@@ -390,17 +347,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="285" column="27" selection-start-line="285" selection-start-column="27" selection-end-line="285" selection-end-column="27" />
+        <state relative-caret-position="263">
+          <caret line="252" column="49" selection-start-line="252" selection-start-column="49" selection-end-line="252" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Server#0" />
             <element signature="method#Server#0;class#Server#0" />
-            <element signature="e#1360#1408#0" />
             <element signature="method#checkClient#0;class#Server#0" />
-            <element signature="method#menuAdmin#0;class#Server#0" />
             <element signature="method#tableFXML#0;class#Server#0" />
-            <element signature="method#viewTableResult#0;class#Server#0" />
+            <element signature="method#regist#0;class#Server#0" />
           </folding>
         </state>
       </provider>
