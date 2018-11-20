@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
+
+import static com.sun.xml.internal.ws.policy.sourcemodel.wspolicy.XmlToken.Name;
 
 public class ConnectSQL {
 
@@ -117,13 +120,35 @@ public class ConnectSQL {
 
     public void updateLastName(int tabNum, String last) throws SQLException {
         Statement statement = connection.createStatement();
-        String update = "update coursework.personnel set lastName = \"" + last + "\" where tabNumber = " + tabNum + "";
+        String update = "update coursework.personnel set lastName = \"" + last + "\" where tabNumber = \"" + tabNum + "\"";
         System.out.println(statement.executeUpdate(update));
     }
 
     public void updateEducation(int tabNum, String educ) throws SQLException {
         Statement statement = connection.createStatement();
-        String update = "update coursework.personnel set education = \"" + educ + "\" where tabNumber = " + tabNum + "";
+        String update = "update coursework.personnel set education = \"" + educ + "\" where tabNumber = \"" + tabNum + "\"";
         System.out.println(statement.executeUpdate(update));
+    }
+
+    public void dismissRow(int t, String reason) throws SQLException {
+        String query = "SELECT * FROM coursework.personnel where tabNumber = \"" + t + "\"";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+String FIO = null;
+        LocalDate today =  LocalDate.now();
+        while (resultSet.next()) {
+            FIO = resultSet.getString("surname") ;
+            FIO +=  " ";
+            FIO += resultSet.getString("name");
+            FIO += " ";
+            FIO += resultSet.getString("lastName");
+            System.out.println(FIO);
+        }
+        String deletRow = "DELETE FROM coursework.personnel where tabNumber = " + t + " ";
+        System.out.println(statement.executeUpdate(deletRow));
+        String command = "INSERT INTO coursework.dismiss (FIO, dismissDate, reasonDismiss)  VALUE (\"" + FIO + "\",\"" + today + "\",\"" + reason + "\")";
+        System.out.println(statement.executeUpdate(command));
+        statement.close();
+
     }
 }

@@ -10,7 +10,7 @@
     <schema id="2" parent="1" name="coursework">
       <Current>1</Current>
       <Visible>1</Visible>
-      <Collation>latin1_swedish_ci</Collation>
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
@@ -809,225 +809,271 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="203" parent="2" name="personnel"/>
-    <table id="204" parent="2" name="position"/>
-    <table id="205" parent="2" name="surcharge"/>
-    <table id="206" parent="2" name="user"/>
-    <table id="207" parent="2" name="wages"/>
-    <column id="208" parent="203" name="tabNumber">
+    <table id="203" parent="2" name="dismiss"/>
+    <table id="204" parent="2" name="personnel">
+      <Collation>latin1_swedish_ci</Collation>
+    </table>
+    <table id="205" parent="2" name="position">
+      <Collation>utf8mb4_general_ci</Collation>
+    </table>
+    <table id="206" parent="2" name="surcharge">
+      <Collation>utf8mb4_general_ci</Collation>
+    </table>
+    <table id="207" parent="2" name="user">
+      <Collation>latin1_swedish_ci</Collation>
+    </table>
+    <table id="208" parent="2" name="wages"/>
+    <column id="209" parent="203" name="FIO">
+      <Position>1</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8mb4_general_ci</Collation>
+    </column>
+    <column id="210" parent="203" name="dismissDate">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="211" parent="203" name="reasonDismiss">
+      <Position>3</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8mb4_general_ci</Collation>
+    </column>
+    <column id="212" parent="204" name="tabNumber">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="209" parent="203" name="surname">
+    <column id="213" parent="204" name="surname">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8mb4_general_ci</Collation>
     </column>
-    <column id="210" parent="203" name="name">
+    <column id="214" parent="204" name="name">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8mb4_general_ci</Collation>
     </column>
-    <column id="211" parent="203" name="lastName">
+    <column id="215" parent="204" name="lastName">
       <Position>4</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8mb4_general_ci</Collation>
     </column>
-    <column id="212" parent="203" name="birthday">
+    <column id="216" parent="204" name="birthday">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="213" parent="203" name="education">
+    <column id="217" parent="204" name="education">
       <Position>6</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8mb4_general_ci</Collation>
     </column>
-    <column id="214" parent="203" name="hireDate">
+    <column id="218" parent="204" name="hireDate">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="215" parent="203" name="idPosition">
+    <column id="219" parent="204" name="idPosition">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="216" parent="203" name="tabNumber_UNIQUE">
+    <index id="220" parent="204" name="tabNumber_UNIQUE">
       <ColNames>tabNumber</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="217" parent="203" name="fk_personnel_position_idx">
+    <index id="221" parent="204" name="fk_personnel_position_idx">
       <ColNames>idPosition</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="218" parent="203" name="PRIMARY">
+    <key id="222" parent="204" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>tabNumber</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="219" parent="203" name="tabNumber_UNIQUE">
+    <key id="223" parent="204" name="tabNumber_UNIQUE">
       <ColNames>tabNumber</ColNames>
       <UnderlyingIndexName>tabNumber_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="220" parent="203" name="fk_personnel_position">
+    <foreign-key id="224" parent="204" name="fk_personnel_position">
       <ColNames>idPosition</ColNames>
       <RefSchemaName>coursework</RefSchemaName>
       <RefTableName>position</RefTableName>
       <RefColNames>idPosition</RefColNames>
     </foreign-key>
-    <column id="221" parent="204" name="idPosition">
+    <column id="225" parent="205" name="idPosition">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="222" parent="204" name="posName">
+    <column id="226" parent="205" name="posName">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="223" parent="204" name="salary">
+    <column id="227" parent="205" name="salary">
       <Position>3</Position>
       <DataType>decimal(10,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="224" parent="204" name="idPosition_UNIQUE">
+    <index id="228" parent="205" name="idPosition_UNIQUE">
       <ColNames>idPosition</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="225" parent="204" name="posName_UNIQUE">
+    <index id="229" parent="205" name="posName_UNIQUE">
       <ColNames>posName</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="226" parent="204" name="PRIMARY">
+    <key id="230" parent="205" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idPosition</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="227" parent="204" name="idPosition_UNIQUE">
+    <key id="231" parent="205" name="idPosition_UNIQUE">
       <ColNames>idPosition</ColNames>
       <UnderlyingIndexName>idPosition_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="228" parent="204" name="posName_UNIQUE">
+    <key id="232" parent="205" name="posName_UNIQUE">
       <ColNames>posName</ColNames>
       <UnderlyingIndexName>posName_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="229" parent="205" name="idSurcharge">
+    <column id="233" parent="206" name="idSurcharge">
       <Position>1</Position>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="230" parent="205" name="nameSurcharge">
+    <column id="234" parent="206" name="nameSurcharge">
       <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="231" parent="205" name="allowanceSize">
+    <column id="235" parent="206" name="allowanceSize">
       <Position>3</Position>
       <DataType>decimal(10,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="232" parent="205" name="PRIMARY">
+    <key id="236" parent="206" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idSurcharge</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="233" parent="206" name="idUser">
+    <column id="237" parent="207" name="idUser">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="206" name="UserName">
+    <column id="238" parent="207" name="UserName">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="206" name="UserPass">
+    <column id="239" parent="207" name="UserPass">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="236" parent="206" name="idUser_UNIQUE">
+    <index id="240" parent="207" name="idUser_UNIQUE">
       <ColNames>idUser</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="237" parent="206" name="UserName_UNIQUE">
+    <index id="241" parent="207" name="UserName_UNIQUE">
       <ColNames>UserName</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="238" parent="206" name="PRIMARY">
+    <key id="242" parent="207" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idUser
 UserName</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="239" parent="206" name="idUser_UNIQUE">
+    <key id="243" parent="207" name="idUser_UNIQUE">
       <ColNames>idUser</ColNames>
       <UnderlyingIndexName>idUser_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="240" parent="206" name="UserName_UNIQUE">
+    <key id="244" parent="207" name="UserName_UNIQUE">
       <ColNames>UserName</ColNames>
       <UnderlyingIndexName>UserName_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="241" parent="207" name="prizeSize">
+    <column id="245" parent="208" name="prizeSize">
       <Position>1</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="207" name="wagesSize">
+    <column id="246" parent="208" name="wagesSize">
       <Position>2</Position>
       <DataType>decimal(10,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="207" name="idPosition">
+    <column id="247" parent="208" name="idPosition">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="207" name="idSurcharge">
+    <column id="248" parent="208" name="idSurcharge">
       <Position>4</Position>
-      <DataType>decimal(10,2 digit)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="245" parent="207" name="fk_wages_position1_idx">
+    <column id="249" parent="208" name="tabNumber">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="250" parent="208" name="fk_wages_position1_idx">
       <ColNames>idPosition</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="246" parent="207" name="fk_wages_surcharge1_idx">
+    <index id="251" parent="208" name="fk_wages_surcharge1_idx">
       <ColNames>idSurcharge</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="247" parent="207" name="PRIMARY">
+    <index id="252" parent="208" name="fk_wages_personnel1_idx">
+      <ColNames>tabNumber</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="253" parent="208" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idPosition</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="248" parent="207" name="fk_wages_position1">
+    <foreign-key id="254" parent="208" name="fk_wages_position1">
       <ColNames>idPosition</ColNames>
       <RefSchemaName>coursework</RefSchemaName>
       <RefTableName>position</RefTableName>
       <RefColNames>idPosition</RefColNames>
     </foreign-key>
-    <foreign-key id="249" parent="207" name="fk_wages_surcharge1">
+    <foreign-key id="255" parent="208" name="fk_wages_surcharge1">
       <ColNames>idSurcharge</ColNames>
       <RefSchemaName>coursework</RefSchemaName>
       <RefTableName>surcharge</RefTableName>
       <RefColNames>idSurcharge</RefColNames>
+    </foreign-key>
+    <foreign-key id="256" parent="208" name="fk_wages_personnel1">
+      <ColNames>tabNumber</ColNames>
+      <RefSchemaName>coursework</RefSchemaName>
+      <RefTableName>personnel</RefTableName>
+      <RefColNames>tabNumber</RefColNames>
     </foreign-key>
   </database-model>
 </dataSource>

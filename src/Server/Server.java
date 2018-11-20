@@ -140,13 +140,17 @@ public class Server extends Thread {
 
 
     private void menuAdmin() throws IOException, ClassNotFoundException, SQLException {
-
-
         int i = 0;
         while (i == 0) {
             switch ((int) is.readObject()) {
                 case 1111:
-                   // exposureMark();
+                    viewTableResult();
+                    if (111300 == (int) is.readObject()) {
+                        ConnectSQL connectSQL = new ConnectSQL();
+                        int t = (int) is.readObject();
+                        String reason = (String)is.readObject();
+                        connectSQL.dismissRow(t,reason);
+                    }
                     break;
 
                 case 1112:
@@ -270,7 +274,6 @@ public class Server extends Thread {
             }
             os.writeObject(ConnectSQL.getIdClient());
 
-            //os.writeObject(buildings);
 
         } catch (SQLException e) {
             e.printStackTrace();
