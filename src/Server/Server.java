@@ -170,8 +170,9 @@ public class Server extends Thread {
                 case 1114:
                     tableFXML(1);
                     break;
+                    //Окно оперирования премиями
                 case 1115:
-                  //  diogramMark();
+                  prizeFXML(1);
                     break;
                 case 1116:
                   //  workWithAlternativ();
@@ -182,6 +183,71 @@ public class Server extends Thread {
             }
         }
 
+    }
+
+    private void prizeFXML(int i) throws IOException, ClassNotFoundException, SQLException {
+
+        while (true) {
+            ConnectSQL connectSQL = new ConnectSQL();
+            switch ((int) is.readObject()) {
+                case 7777:
+                    try {
+                        String FIO = null;
+                        ResultSet resultSet = null;
+                        if (ConnectSQL.getIdClient() > 0 && ConnectSQL.getIdClient() < 10)
+                            resultSet = connectSQL.loojHighTable();
+                        else if (ConnectSQL.getIdClient() > 9 && ConnectSQL.getIdClient() < 100)
+                            resultSet = connectSQL.loojHighTable();
+                        while (resultSet.next()) {
+                            os.writeObject(0);
+                            //собрать ФИО в один string
+                            FIO = resultSet.getString("surname");
+                            FIO += " ";
+                            FIO += resultSet.getString("name");
+                            FIO += " ";
+                            FIO += resultSet.getString("lastName");
+                            os.writeObject(FIO);
+                            os.writeObject(resultSet.getString("posName"));
+                            os.writeObject(resultSet.getFloat("wagesSize"));
+                            os.writeObject(resultSet.getFloat("prizeSize"));
+                        }
+                        os.writeObject(ConnectSQL.getIdClient());////////////////////&&&&&&&&&&&&&  Почему???????????????????????????
+
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                /*case 3443:
+                    connectSQL.deletRow((int) is.readObject());
+                    break;
+
+                case 3663:
+                    switch ((int) is.readObject()) {
+                        case 1:
+                            connectSQL.updateSurname((int) is.readObject(), (String) is.readObject());
+                            break;
+                        case 2:
+                            connectSQL.updateName((int) is.readObject(), (String) is.readObject());
+                            break;
+                        case 3:
+                            connectSQL.updateLastName((int) is.readObject(), (String) is.readObject());
+                            break;
+                        case 4:
+                            connectSQL.updateEducation((int) is.readObject(), (String) is.readObject());
+                            break;
+                    }
+                    break;
+
+                case 3553:
+/////////////////////////////////
+                    break;*/
+                case 3333:
+                    os.writeObject(ConnectSQL.getIdClient());
+                    return;
+            }
+
+
+        }
     }
 
     private void tableFXML(int i) throws IOException, ClassNotFoundException, SQLException {
@@ -268,7 +334,7 @@ public class Server extends Thread {
                 os.writeObject(resultSet.getDate("birthday").toLocalDate());
                 os.writeObject(resultSet.getString("education"));
                 os.writeObject(resultSet.getDate("hireDate").toLocalDate());
-                os.writeObject(resultSet.getInt("idPosition"));
+                os.writeObject(resultSet.getInt("Position"));
 
 
             }

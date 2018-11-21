@@ -151,4 +151,15 @@ String FIO = null;
         statement.close();
 
     }
+
+    public ResultSet loojHighTable() throws SQLException {
+        String query = "SELECT personnel.surname, personnel.name, personnel.lastName, position.posName, wages.wagesSize, wages.prizeSize\n" +
+                "from personnel\n" +
+                "INNER JOIN position on idPosition = Position\n" +
+                "INNER JOIN wages on Number = tabNumber";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        return resultSet;
+    }
 }
