@@ -255,6 +255,29 @@ public class Server extends Thread {
                         e.printStackTrace();
                     }
                     break;
+                case 3663:
+                    switch ((int) is.readObject()) {
+                        case 1:
+                            String lines = (String) is.readObject();
+                            String line[] = lines.split(" ");
+                            int tab = connectSQL.findTab(line[0]);
+                            connectSQL.updatePercent(tab, (String) is.readObject());
+
+                            break;
+                        case 2:
+                            String surname = (String) is.readObject();
+                            int tabNum = connectSQL.findTab(surname);
+                            if (tabNum == 0) {
+                                os.writeObject(0);
+                                break;
+                            }
+                            else {
+                                os.writeObject(1);
+                                connectSQL.insertEncorage(tabNum, Float.valueOf((String)is.readObject()), (String) is.readObject(), (LocalDate) is.readObject());
+                            }
+                                break;
+                    }
+                    break;
                 case 3333:
                     os.writeObject(ConnectSQL.getIdClient());
                     return;

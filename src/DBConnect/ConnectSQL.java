@@ -25,7 +25,9 @@ public class ConnectSQL {
         DBProcessor db = new DBProcessor();
         connection = db.getConnection(url, user, password);
     }
-//сделать кучу функций для таблицы, которую я создал!!!!!!!!!!!!!!!!!!!
+
+
+    //сделать кучу функций для таблицы, которую я создал!!!!!!!!!!!!!!!!!!!
     public boolean checkingAdmin(String Name, String Password) throws SQLException {
 
         String query = "select * from coursework.user WHERE idUser >0 AND idUser <100";
@@ -120,13 +122,13 @@ public class ConnectSQL {
 
     public void updateLastName(int tabNum, String last) throws SQLException {
         Statement statement = connection.createStatement();
-        String update = "update coursework.personnel set lastName = \"" + last + "\" where tabNumber = \"" + tabNum + "\"";
+        String update = "update coursework.personnel set lastName = \"" + last + "\" where tabNumber = " + tabNum + "";
         System.out.println(statement.executeUpdate(update));
     }
 
     public void updateEducation(int tabNum, String educ) throws SQLException {
         Statement statement = connection.createStatement();
-        String update = "update coursework.personnel set education = \"" + educ + "\" where tabNumber = \"" + tabNum + "\"";
+        String update = "update coursework.personnel set education = \"" + educ + "\" where tabNumber = " + tabNum + "";
         System.out.println(statement.executeUpdate(update));
     }
 
@@ -179,5 +181,35 @@ String FIO = null;
         ResultSet resultSet = statement.executeQuery(query);
 
         return resultSet;
+    }
+
+    public void updatePercent(int tab, String readObject) throws SQLException {
+        Statement statement = connection.createStatement();
+        String update = "update coursework.wages set prizePercent = \"" + readObject + "\" where Number = \"" + tab + "\"";
+        System.out.println(statement.executeUpdate(update));
+    }
+
+    public int findTab(String line) throws SQLException {
+        System.out.println(line);
+        String query = "SELECT * FROM coursework.personnel where surname =\"" + line +"\"";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        int ret = 0;
+        while(resultSet.next()) {
+            ret = resultSet.getInt("tabNumber");
+        }
+        return ret;
+
+    }
+
+    public void insertEncorage(int tabNum, float readObject, String readObject1, LocalDate readObject2) throws SQLException {
+        System.out.println(tabNum);
+        System.out.println(readObject);
+        System.out.println(readObject1);
+        System.out.println(readObject2.toString());
+        String command = "INSERT INTO coursework.encouraging (encSize, encDescription, tabNum, encMonth)  VALUE (" + readObject + ",\"" + readObject1 + "\"," + tabNum +",\"" + readObject2.toString() + "\")";
+        Statement statement = connection.createStatement();
+        statement.execute(command);
+        statement.close();
     }
 }
