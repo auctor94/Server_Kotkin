@@ -99,7 +99,7 @@ public class ConnectSQL {
 
         return resultSet;
     }
-
+//добавить каскадное удаление!!!!!!!!!!!!!!!!!!!!!!
     public void deletRow(int t) throws SQLException {
         Statement statement = connection.createStatement();
         String deletRow = "DELETE FROM coursework.personnel where tabNumber = " + t + " ";
@@ -153,10 +153,28 @@ String FIO = null;
     }
 
     public ResultSet loojHighTable() throws SQLException {
-        String query = "SELECT personnel.surname, personnel.name, personnel.lastName, position.posName, wages.wagesSize, wages.prizeSize\n" +
+        String query = "SELECT personnel.surname, personnel.name, personnel.lastName, position.posName, wages.wagesSize, wages.wagesSize*wages.prizePercent/100 as prizeSize \n" +
                 "from personnel\n" +
                 "INNER JOIN position on idPosition = Position\n" +
                 "INNER JOIN wages on Number = tabNumber";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        return resultSet;
+    }
+
+    public ResultSet loojMiddleTable() throws SQLException {
+        String query = "SELECT CONCAT(personnel.surname,' ', personnel.name, ' ', personnel.lastName) as SURNAME, encouraging.encDescription, encouraging.encSize, encouraging.encMonth from personnel\n" +
+                "INNER JOIN encouraging on tabNum = tabNumber";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        return resultSet;
+    }
+
+    public ResultSet loojLowTable() throws SQLException {
+        String query = "SELECT CONCAT(personnel.surname,' ', personnel.name, ' ', personnel.lastName) as SURNAME, wages.prizePercent from personnel\n" +
+            "INNER JOIN wages on Number = tabNumber";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
 

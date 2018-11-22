@@ -217,30 +217,44 @@ public class Server extends Thread {
                         e.printStackTrace();
                     }
                     break;
-                /*case 3443:
-                    connectSQL.deletRow((int) is.readObject());
-                    break;
+                case 7778:
+                    try {
+                        ResultSet resultSet = null;
+                        if (ConnectSQL.getIdClient() > 0 && ConnectSQL.getIdClient() < 10)
+                            resultSet = connectSQL.loojMiddleTable();
+                        else if (ConnectSQL.getIdClient() > 9 && ConnectSQL.getIdClient() < 100)
+                            resultSet = connectSQL.loojMiddleTable();
+                        while (resultSet.next()) {
+                            os.writeObject(0);
+                            os.writeObject(resultSet.getString("SURNAME"));
+                            os.writeObject(resultSet.getString("encDescription"));
+                            os.writeObject(resultSet.getFloat("encSize"));
+                            os.writeObject(resultSet.getDate("encMonth").toLocalDate());
+                        }
+                        os.writeObject(ConnectSQL.getIdClient());
 
-                case 3663:
-                    switch ((int) is.readObject()) {
-                        case 1:
-                            connectSQL.updateSurname((int) is.readObject(), (String) is.readObject());
-                            break;
-                        case 2:
-                            connectSQL.updateName((int) is.readObject(), (String) is.readObject());
-                            break;
-                        case 3:
-                            connectSQL.updateLastName((int) is.readObject(), (String) is.readObject());
-                            break;
-                        case 4:
-                            connectSQL.updateEducation((int) is.readObject(), (String) is.readObject());
-                            break;
+                    } catch (SQLException e) {
+                        e.printStackTrace();
                     }
                     break;
 
-                case 3553:
-/////////////////////////////////
-                    break;*/
+                case 7779:
+                    try {
+                        ResultSet resultSet = null;
+                        if (ConnectSQL.getIdClient() > 0 && ConnectSQL.getIdClient() < 10)
+                            resultSet = connectSQL.loojLowTable();
+                        else if (ConnectSQL.getIdClient() > 9 && ConnectSQL.getIdClient() < 100)
+                            resultSet = connectSQL.loojLowTable();
+                        while (resultSet.next()) {
+                            os.writeObject(0);
+                            os.writeObject(resultSet.getString("SURNAME"));
+                            os.writeObject(resultSet.getFloat("prizePercent"));
+                        }
+                        os.writeObject(ConnectSQL.getIdClient());
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    break;
                 case 3333:
                     os.writeObject(ConnectSQL.getIdClient());
                     return;
@@ -271,7 +285,7 @@ public class Server extends Thread {
                             os.writeObject(resultSet.getDate("birthday").toLocalDate());
                             os.writeObject(resultSet.getString("education"));
                             os.writeObject(resultSet.getDate("hireDate").toLocalDate());
-                            os.writeObject(resultSet.getInt("idPosition"));
+                            os.writeObject(resultSet.getInt("Position"));
                         }
                         os.writeObject(ConnectSQL.getIdClient());////////////////////&&&&&&&&&&&&&  Почему???????????????????????????
 
