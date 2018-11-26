@@ -2,10 +2,13 @@ package Server;
 import DBConnect.ConnectSQL;
 
 import Personnel.Personnel;
+import Reports.FirstReport;
 import com.sun.org.apache.xml.internal.res.XMLErrorResources_tr;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
+import net.sf.jasperreports.engine.JRException;
+
 import javax.swing.*;
 import java.io.*;
 import java.net.InetAddress;
@@ -20,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+
+
 public class Server extends Thread {
 
     Socket socket;
@@ -32,6 +37,7 @@ public class Server extends Thread {
         try {
             ServerSocket server = new ServerSocket(3128, 0, InetAddress.getByName("localhost"));
             System.out.println("Сервер начал работу");
+
 
             while (true) {
                 new Server(server.accept());
@@ -108,6 +114,8 @@ public class Server extends Thread {
         }
          catch (SQLException e) {
             e.printStackTrace();
+        } catch (JRException e) {
+            e.printStackTrace();
         }
     }
 
@@ -139,7 +147,7 @@ public class Server extends Thread {
     }
 
 
-    private void menuAdmin() throws IOException, ClassNotFoundException, SQLException {
+    private void menuAdmin() throws IOException, ClassNotFoundException, SQLException, JRException {
         int i = 0;
         while (i == 0) {
             switch ((int) is.readObject()) {
@@ -175,6 +183,9 @@ public class Server extends Thread {
                   prizeFXML(1);
                     break;
                 case 1116:
+                    FirstReport first = new FirstReport();
+                    first.create();
+                    os.writeObject(0);
                   //  workWithAlternativ();
                     break;
                 case 3333:

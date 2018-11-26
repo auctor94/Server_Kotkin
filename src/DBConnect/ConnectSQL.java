@@ -6,15 +6,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
-import static com.sun.xml.internal.ws.policy.sourcemodel.wspolicy.XmlToken.Name;
 
 public class ConnectSQL {
 
     private static final String user = "root";
     private static final String password = "root";
     private static final String url = "jdbc:mysql://localhost:3306/CourseWork?useUnicode=true&characterEncoding=utf8&useLegacyDatetimeCode=false&serverTimezone=UTC";
+
+    public static Connection getConnection() {
+        return connection;
+    }
+
     private static Connection connection;
     private static Statement stmt;
     private static ResultSet rs;
@@ -26,8 +29,6 @@ public class ConnectSQL {
         connection = db.getConnection(url, user, password);
     }
 
-
-    //сделать кучу функций для таблицы, которую я создал!!!!!!!!!!!!!!!!!!!
     public boolean checkingAdmin(String Name, String Password) throws SQLException {
 
         String query = "select * from coursework.user WHERE idUser >0 AND idUser <100";
@@ -61,7 +62,6 @@ public class ConnectSQL {
         statement.close();
         return false;
     }
-
 
     public boolean registerNewUser(String Name, String Password) throws SQLException {
 
@@ -203,10 +203,6 @@ String FIO = null;
     }
 
     public void insertEncorage(int tabNum, float readObject, String readObject1, LocalDate readObject2) throws SQLException {
-        System.out.println(tabNum);
-        System.out.println(readObject);
-        System.out.println(readObject1);
-        System.out.println(readObject2.toString());
         String command = "INSERT INTO coursework.encouraging (encSize, encDescription, tabNum, encMonth)  VALUE (" + readObject + ",\"" + readObject1 + "\"," + tabNum +",\"" + readObject2.toString() + "\")";
         Statement statement = connection.createStatement();
         statement.execute(command);
