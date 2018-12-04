@@ -31,7 +31,7 @@ public class ConnectSQL {
 
     public boolean checkingAdmin(String Name, String Password) throws SQLException {
 
-        String query = "select * from coursework.user WHERE idUser >0 AND idUser <100";
+        String query = "select * from coursework.user WHERE idUser >0 AND idUser <10";
         stmt = connection.createStatement();
         rs = stmt.executeQuery(query);
 
@@ -48,7 +48,7 @@ public class ConnectSQL {
 
     public boolean checkingUser(String Name, String Password) throws SQLException {
 
-        String query = "select * from coursework.user WHERE idUser >0 AND idUser <100";
+        String query = "select * from coursework.user WHERE idUser >9 AND idUser <100";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
 
@@ -63,26 +63,44 @@ public class ConnectSQL {
         return false;
     }
 
-    public boolean registerNewUser(String Name, String Password) throws SQLException {
+    public boolean registerNewUser(String Name, String Password, int isAdmin) throws SQLException {
 
         String query = "select * from coursework.user ";
         stmt = connection.createStatement();
         rs = stmt.executeQuery(query);
-        int id = 9;
+        int counter1 = 0, counter2 =0;
+        int id = 9;//cлучайное число
+
         while (rs.next()) {
             id = rs.getInt("idUser");
+            if (id < 10) counter1++;
             String nameUser = rs.getString("UserName");
             String passwordUser = rs.getString("UserPass");
             if (nameUser.equals(Name))//&& id > 0 && id < 10)
                 return false;
+            counter2 = id;
         }
-        if (id < 10) id = 10;
-        else id++;
+
+        if (counter1 == 9 && isAdmin == 1) {
+            return false;
+        }
+        if (counter1 <9 && isAdmin == 1) {
+            String command = "INSERT INTO coursework.user (idUser, UserName, UserPass)  VALUE (" + (counter1+1) + ",\"" + Name.toString() + "\",\"" + Password.toString() + "\")";
+
+            stmt.executeUpdate(command);
+        }
+        if (counter2 > counter1 && counter2>9 && isAdmin == 0)
+        {
+            String command = "INSERT INTO coursework.user (idUser, UserName, UserPass)  VALUE (" + (counter2+1) + ",\"" + Name.toString() + "\",\"" + Password.toString() + "\")";
+
+            stmt.executeUpdate(command);
+        }
 
 
-        String command = "INSERT INTO coursework.user (idUser, UserName, UserPass)  VALUE (" + id + ",\"" + Name.toString() + "\",\"" + Password.toString() + "\")";
 
-        stmt.executeUpdate(command);
+
+
+
 
         stmt.close();
         rs.close();
@@ -101,7 +119,8 @@ public class ConnectSQL {
 
         return resultSet;
     }
-//добавить каскадное удаление!!!!!!!!!!!!!!!!!!!!!!
+
+    //добавить каскадное удаление!!!!!!!!!!!!!!!!!!!!!!
     public void deletRow(int t) throws SQLException {
         Statement statement = connection.createStatement();
         String deletRow = "DELETE FROM coursework.personnel where tabNumber = " + t + " ";
@@ -136,11 +155,11 @@ public class ConnectSQL {
         String query = "SELECT * FROM coursework.personnel where tabNumber = \"" + t + "\"";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
-String FIO = null;
-        LocalDate today =  LocalDate.now();
+        String FIO = null;
+        LocalDate today = LocalDate.now();
         while (resultSet.next()) {
-            FIO = resultSet.getString("surname") ;
-            FIO +=  " ";
+            FIO = resultSet.getString("surname");
+            FIO += " ";
             FIO += resultSet.getString("name");
             FIO += " ";
             FIO += resultSet.getString("lastName");
@@ -176,7 +195,7 @@ String FIO = null;
 
     public ResultSet loojLowTable() throws SQLException {
         String query = "SELECT CONCAT(personnel.surname,' ', personnel.name, ' ', personnel.lastName) as SURNAME, wages.prizePercent from personnel\n" +
-            "INNER JOIN wages on Number = tabNumber";
+                "INNER JOIN wages on Number = tabNumber";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
 
@@ -191,11 +210,11 @@ String FIO = null;
 
     public int findTab(String line) throws SQLException {
         System.out.println(line);
-        String query = "SELECT * FROM coursework.personnel where surname =\"" + line +"\"";
+        String query = "SELECT * FROM coursework.personnel where surname =\"" + line + "\"";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
         int ret = 0;
-        while(resultSet.next()) {
+        while (resultSet.next()) {
             ret = resultSet.getInt("tabNumber");
         }
         return ret;
@@ -203,7 +222,7 @@ String FIO = null;
     }
 
     public void insertEncorage(int tabNum, float readObject, String readObject1, LocalDate readObject2) throws SQLException {
-        String command = "INSERT INTO coursework.encouraging (encSize, encDescription, tabNum, encMonth)  VALUE (" + readObject + ",\"" + readObject1 + "\"," + tabNum +",\"" + readObject2.toString() + "\")";
+        String command = "INSERT INTO coursework.encouraging (encSize, encDescription, tabNum, encMonth)  VALUE (" + readObject + ",\"" + readObject1 + "\"," + tabNum + ",\"" + readObject2.toString() + "\")";
         Statement statement = connection.createStatement();
         statement.execute(command);
         statement.close();

@@ -527,11 +527,13 @@ List<User> spisok = new ArrayList<>();
         while (true) {
             int swich = (int) is.readObject();
             if (swich == 888) {
+                int isAdmin = (int) is.readObject();
+
                 String name = (String) is.readObject();
                 String pass = (String) is.readObject();
 
                 ConnectSQL connectSQL = new ConnectSQL();
-                if (connectSQL.registerNewUser(name, pass)) {
+                if (connectSQL.registerNewUser(name, pass,isAdmin)) {
                     os.writeObject(1);
                 } else
                     os.writeObject(0);
