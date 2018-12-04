@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69664313-3a37-42ad-9e45-bbfe25d7233f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ChangeLogPass/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Charts/Chart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Charts/ChartOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Charts/HiringChart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Charts/PercentChart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Charts/SalaryChart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dismiss_report.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Factory/BarChartFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Factory/ChartFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Factory/PieChartFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Reports/SecondReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBConnect/ConnectSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBConnect/ConnectSQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBConnect/DBProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBConnect/DBProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,7 +57,7 @@
         <item name="CourseWork@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="coursework: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="wages: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="user: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -54,46 +66,49 @@
     <session id="-538719024">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.77" value="1" />
+          <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="6" />
-          <entry key="java" value="12" />
+          <entry key="class" value="8" />
+          <entry key="java" value="34" />
           <entry key="jrxml" value="1" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="6" />
-          <entry key="JAVA" value="12" />
+          <entry key="CLASS" value="8" />
+          <entry key="JAVA" value="34" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3432" />
-          <entry key="txt" value="196" />
+          <entry key="java" value="6511" />
+          <entry key="txt" value="225" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3432" />
-          <entry key="PLAIN_TEXT" value="196" />
+          <entry key="JAVA" value="6511" />
+          <entry key="PLAIN_TEXT" value="225" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -108,47 +123,32 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="187" column="38" lean-forward="true" selection-start-line="187" selection-start-column="38" selection-end-line="187" selection-end-column="38" />
+            <state relative-caret-position="257">
+              <caret line="244" column="57" selection-start-line="244" selection-start-column="57" selection-end-line="244" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Server#0;class#Server#0" />
+                <element signature="method#run#0;class#Server#0" />
                 <element signature="method#checkClient#0;class#Server#0" />
+                <element signature="method#reports#0;class#Server#0" />
                 <element signature="method#prizeFXML#0;class#Server#0" />
                 <element signature="method#tableFXML#0;class#Server#0" />
                 <element signature="method#viewTableResult#0;class#Server#0" />
                 <element signature="method#regist#0;class#Server#0" />
+                <element signature="method#appendUsingFileWriter#0;class#Server#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Reports/FirstReport.java">
+        <entry file="file://$PROJECT_DIR$/src/Charts/PercentChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+            <state relative-caret-position="187">
+              <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://E:/Programs/report-ds/report-ds/lib/jasperreports-5.6.1.jar!/net/sf/jasperreports/engine/JasperFillManager.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Cherry_Landscape.jrxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-212">
-              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -156,12 +156,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DBConnect/ConnectSQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+            <state relative-caret-position="317">
+              <caret line="260" column="74" lean-forward="true" selection-start-line="260" selection-start-column="74" selection-end-line="260" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
                 <element signature="e#563#564#0" expanded="true" />
-                <element signature="method#ConnectSQL#0;class#ConnectSQL#0" />
                 <element signature="method#checkingAdmin#0;class#ConnectSQL#0" />
                 <element signature="method#checkingUser#0;class#ConnectSQL#0" />
                 <element signature="method#registerNewUser#0;class#ConnectSQL#0" />
@@ -172,11 +172,16 @@
                 <element signature="method#updateLastName#0;class#ConnectSQL#0" />
                 <element signature="method#updateEducation#0;class#ConnectSQL#0" />
                 <element signature="method#dismissRow#0;class#ConnectSQL#0" />
+                <element signature="method#loojHighTable#0;class#ConnectSQL#0" />
                 <element signature="method#loojMiddleTable#0;class#ConnectSQL#0" />
                 <element signature="method#loojLowTable#0;class#ConnectSQL#0" />
                 <element signature="method#updatePercent#0;class#ConnectSQL#0" />
                 <element signature="method#findTab#0;class#ConnectSQL#0" />
                 <element signature="method#insertEncorage#0;class#ConnectSQL#0" />
+                <element signature="method#getSalaryData#0;class#ConnectSQL#0" />
+                <element signature="method#getPercentData#0;class#ConnectSQL#0" />
+                <element signature="method#getHireData#0;class#ConnectSQL#0" />
+                <element signature="method#getFullReport#0;class#ConnectSQL#0" />
               </folding>
             </state>
           </provider>
@@ -187,6 +192,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -194,6 +200,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>1113</find>
+      <find>3663</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,11 +209,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/DBConnect/DBProcessor.java" />
         <option value="$PROJECT_DIR$/src/Personnel/Personnel.java" />
-        <option value="$PROJECT_DIR$/src/DBConnect/ConnectSQL.java" />
+        <option value="$PROJECT_DIR$/src/ChartsServer/ChartOperations.java" />
+        <option value="$PROJECT_DIR$/src/ChartsServer/Chart.java" />
+        <option value="$PROJECT_DIR$/src/ChartsServer/SalaryChart.java" />
+        <option value="$PROJECT_DIR$/src/Charts/SalaryChart.java" />
+        <option value="$PROJECT_DIR$/src/Charts/PercentChart.java" />
+        <option value="$PROJECT_DIR$/src/Charts/HiringChart.java" />
+        <option value="$PROJECT_DIR$/src/Factory/ChartFactory.java" />
+        <option value="$PROJECT_DIR$/src/Factory/PieChartFactory.java" />
+        <option value="$PROJECT_DIR$/src/Factory/BarChartFactory.java" />
         <option value="$PROJECT_DIR$/src/Reports/FirstReport.java" />
+        <option value="$PROJECT_DIR$/src/DBConnect/DBProcessor.java" />
+        <option value="$PROJECT_DIR$/src/Reports/SecondReport.java" />
+        <option value="$PROJECT_DIR$/src/Reports/EncourageReport.java" />
+        <option value="$PROJECT_DIR$/src/ChangeLogPass/User.java" />
         <option value="$PROJECT_DIR$/src/Server/Server.java" />
+        <option value="$PROJECT_DIR$/src/DBConnect/ConnectSQL.java" />
       </list>
     </option>
   </component>
@@ -216,8 +235,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="745" />
   </component>
@@ -226,7 +245,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -242,30 +260,51 @@
             </path>
             <path>
               <item name="Server_Kotkin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Server_Kotkin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ChangeLogPass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Server_Kotkin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="Server_Kotkin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DBConnect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server_Kotkin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server_Kotkin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Reports" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server_Kotkin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server_Kotkin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543260386055" />
-    <property name="last_opened_file_path" value="C:/Program Files/TIBCO/Jaspersoft Studio-6.6.0/plugins/groovy-all_2.4.5.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543882415976" />
+    <property name="last_opened_file_path" value="E:/Programming/Java labs/Database_1" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.39195403" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Всё для уроков\ПрогСП\Course work 5 term\Server_Kotkin\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -336,7 +375,11 @@
       <workItem from="1542618969411" duration="14204000" />
       <workItem from="1542805334741" duration="94000" />
       <workItem from="1542805546753" duration="19350000" />
-      <workItem from="1543235649482" duration="13629000" />
+      <workItem from="1543235649482" duration="21937000" />
+      <workItem from="1543404646051" duration="13817000" />
+      <workItem from="1543496132389" duration="822000" />
+      <workItem from="1543686289688" duration="4470000" />
+      <workItem from="1543829209302" duration="13688000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Все куда-то движется, моя жоап, например, к дедлайну&quot;">
       <created>1542199629578</created>
@@ -380,16 +423,53 @@
       <option name="project" value="LOCAL" />
       <updated>1542923160067</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&quot;Один раз не пидорас ©Сапер&quot;">
+      <created>1543260431452</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1543260431452</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68928000" />
+    <option name="totallyTimeSpent" value="110033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.8728414" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.30932897" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.33064517" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015129" side_tool="true" weight="0.30483872" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32096773" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.50075644" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+    <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19742814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
@@ -418,7 +498,7 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" weight="0.50078493" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -431,7 +511,8 @@
     <MESSAGE value="&quot;Как я рад, что еще ничего не сгорело!&quot;" />
     <MESSAGE value="&quot;База мутится, запросы крутятся&quot;" />
     <MESSAGE value="&quot;не для тебя, Салапура, мама такую ягодку растила&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;не для тебя, Салапура, мама такую ягодку растила&quot;" />
+    <MESSAGE value="&quot;Один раз не пидорас ©Сапер&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Один раз не пидорас ©Сапер&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -442,52 +523,12 @@
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/Server.java</url>
-          <line>276</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/Server.java</url>
-          <line>280</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/Server.java</url>
-          <line>285</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/DBConnect/ConnectSQL.java</url>
-          <line>31</line>
-          <properties class="DBConnect.ConnectSQL" method="checkingAdmin">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DBConnect/DBProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/51b918da-5daf-40bb-9e32-4da9720ba90e/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Personnel/Personnel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://E:/Programs/mysql-connector-java-8.0.13/mysql-connector-java-8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -517,10 +558,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.542/net/sf/jasperreports/engine/xml/JRXmlLoader.class">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.542/net/sf/jasperreports/engine/xml/JRXmlLoader.class" />
+    <entry file="jar://E:/Programs/report-ds/report-ds/lib/jasperreports-5.6.1.jar!/net/sf/jasperreports/engine/DefaultJasperReportsContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/beans/property/StringPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="136" column="16" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Charts/SalaryChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#891#892#0" expanded="true" />
+            <element signature="e#931#932#0" expanded="true" />
+            <element signature="e#963#964#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Charts/Chart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Charts/ChartOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Programs/report-ds/report-ds/lib/jasperreports-5.6.1.jar!/net/sf/jasperreports/engine/JasperFillManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Charts/HiringChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="48" column="40" lean-forward="true" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Personnel/Personnel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-884">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Factory/ChartFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Factory/PieChartFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Factory/BarChartFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DBConnect/DBProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -529,43 +670,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Cherry_Landscape.jrxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-212">
+        <state relative-caret-position="969">
           <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Programs/report-ds/report-ds/lib/jasperreports-5.6.1.jar!/net/sf/jasperreports/engine/DefaultJasperReportsContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-969">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Programs/report-ds/report-ds/lib/jasperreports-5.6.1.jar!/net/sf/jasperreports/engine/JasperFillManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reports/FirstReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+        <state relative-caret-position="113">
+          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBConnect/ConnectSQL.java">
+    <entry file="file://$PROJECT_DIR$/src/Reports/EncourageReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reports/SecondReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Programs/report-ds/report-ds/lib/jasperreports-5.6.1.jar!/net/sf/jasperreports/engine/JasperCompileManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Programs/report-ds/report-ds/lib/jasperreports-5.6.1.jar!/net/sf/jasperreports/engine/design/JRAbstractCompiler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="115" column="129" lean-forward="true" selection-start-line="115" selection-start-column="129" selection-end-line="115" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Charts/PercentChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChangeLogPass/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#214#215#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DBConnect/ConnectSQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="260" column="74" lean-forward="true" selection-start-line="260" selection-start-column="74" selection-end-line="260" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
             <element signature="e#563#564#0" expanded="true" />
-            <element signature="method#ConnectSQL#0;class#ConnectSQL#0" />
             <element signature="method#checkingAdmin#0;class#ConnectSQL#0" />
             <element signature="method#checkingUser#0;class#ConnectSQL#0" />
             <element signature="method#registerNewUser#0;class#ConnectSQL#0" />
@@ -576,27 +759,35 @@
             <element signature="method#updateLastName#0;class#ConnectSQL#0" />
             <element signature="method#updateEducation#0;class#ConnectSQL#0" />
             <element signature="method#dismissRow#0;class#ConnectSQL#0" />
+            <element signature="method#loojHighTable#0;class#ConnectSQL#0" />
             <element signature="method#loojMiddleTable#0;class#ConnectSQL#0" />
             <element signature="method#loojLowTable#0;class#ConnectSQL#0" />
             <element signature="method#updatePercent#0;class#ConnectSQL#0" />
             <element signature="method#findTab#0;class#ConnectSQL#0" />
             <element signature="method#insertEncorage#0;class#ConnectSQL#0" />
+            <element signature="method#getSalaryData#0;class#ConnectSQL#0" />
+            <element signature="method#getPercentData#0;class#ConnectSQL#0" />
+            <element signature="method#getHireData#0;class#ConnectSQL#0" />
+            <element signature="method#getFullReport#0;class#ConnectSQL#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="187" column="38" lean-forward="true" selection-start-line="187" selection-start-column="38" selection-end-line="187" selection-end-column="38" />
+        <state relative-caret-position="257">
+          <caret line="244" column="57" selection-start-line="244" selection-start-column="57" selection-end-line="244" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Server#0;class#Server#0" />
+            <element signature="method#run#0;class#Server#0" />
             <element signature="method#checkClient#0;class#Server#0" />
+            <element signature="method#reports#0;class#Server#0" />
             <element signature="method#prizeFXML#0;class#Server#0" />
             <element signature="method#tableFXML#0;class#Server#0" />
             <element signature="method#viewTableResult#0;class#Server#0" />
             <element signature="method#regist#0;class#Server#0" />
+            <element signature="method#appendUsingFileWriter#0;class#Server#0" />
           </folding>
         </state>
       </provider>
@@ -633,7 +824,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.39195403" />
               </list>
             </option>
           </splitter-proportions>
@@ -658,6 +849,7 @@
             <option name="proportions">
               <list>
                 <option value="0.39195403" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

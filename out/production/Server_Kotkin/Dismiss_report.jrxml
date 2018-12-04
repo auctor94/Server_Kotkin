@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Dismiss_report" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="efd33f9f-ceeb-4661-87f8-62078472f6cd">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[Select coursework.dismiss.`FIO`,  coursework.dismiss.`dismissDate`, coursework.dismiss.`reasonDismiss`  from  coursework.dismiss]]>
+	</queryString>
+	<field name="FIO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FIO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dismiss"/>
+	</field>
+	<field name="dismissDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="dismissDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dismiss"/>
+	</field>
+	<field name="reasonDismiss" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="reasonDismiss"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dismiss"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{FIO}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="eb72bdb7-b1d4-4db7-bafb-9c173fa8bca2"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[ФИО]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="17b2cf55-c864-4bb8-a100-005640f3e7eb"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FIO}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="91afd14e-abbc-462e-8f84-0225abb97ceb"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="1ffc5a31-38c2-487c-8109-886e3587a548"/>
+				<staticText>
+					<reportElement x="20" y="0" width="554" height="90" forecolor="#FFFFFF" uuid="9759eb82-e4ea-4c3b-a040-908e07680b8b"/>
+					<textElement textAlignment="Center">
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ОТЧЕТ ПО УВОЛЕННЫМ СОТРУДНИКАМ]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="ae12c876-6176-44e5-8041-2397050be8b5"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f023d2f9-ca60-427b-a21a-e50aac0a6648">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5550edb6-aa62-4c0c-8932-4dcf07a14796"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Дата увольнения]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="277" y="0" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c966acbd-d48b-4cdc-ae4f-c254e27fd72d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51b489d3-bae5-4dc8-ba5f-6749d3f8777d"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Причина увольнения]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="d74d172d-25a6-4ca4-8826-da84d2c8abf2"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="277" height="20" uuid="4e160456-4dc6-4fef-86b2-5cce4e42e1e8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5550edb6-aa62-4c0c-8932-4dcf07a14796"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dismissDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="277" y="0" width="277" height="20" uuid="a2b01e75-5eeb-4d1b-ab18-33061ecf5b86">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51b489d3-bae5-4dc8-ba5f-6749d3f8777d"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reasonDismiss}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="6e1c0ca1-0d33-4432-8002-b3279d422b0a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="4ca1fc0a-756c-4363-af7b-f4df35b25dc5"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="9d17b28d-3e53-42a9-90f0-fc1692e83c02"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

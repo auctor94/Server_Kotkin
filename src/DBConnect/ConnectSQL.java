@@ -208,4 +208,65 @@ String FIO = null;
         statement.execute(command);
         statement.close();
     }
+
+    public ResultSet getSalaryData() throws SQLException {
+        String query = "SELECT personnel.surname, personnel.name, personnel.lastName, wages.wagesSize+(wages.wagesSize*wages.prizePercent/100) as salary \n" +
+                "from personnel\n" +
+                "INNER JOIN wages on Number = tabNumber";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        return resultSet;
+    }
+
+    public ResultSet getPercentData() throws SQLException {
+        String query = "SELECT personnel.surname, personnel.name, personnel.lastName, wages.prizePercent from personnel\n" +
+                "INNER JOIN wages on Number = tabNumber";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        return resultSet;
+    }
+
+    public ResultSet getHireData() throws SQLException {
+        String query = "SELECT personnel.hireDate from personnel";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        return resultSet;
+    }
+
+    public ResultSet getFullReport() throws SQLException {
+        String query = "SELECT (SELECT COUNT(coursework.personnel.`tabNumber` ) from personnel) as count1, (SELECT COUNT( coursework.position.`posName` ) from position) as count2, AVG( wagesSize) as avg1 ,AVG( prizePercent) as avg2 , MIN( wagesSize) as min1,MAX( wagesSize) as max1,(SELECT COUNT( coursework.encouraging.`encSize` ) from encouraging) as count3,(SELECT COUNT( coursework.dismiss.`FIO` ) from dismiss) as count4 FROM coursework.personnel,coursework.position,coursework.wages, coursework.encouraging,coursework.dismiss";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        return resultSet;
+    }
+
+    public ResultSet lookUsersAll() throws SQLException {
+        String query = "SELECT * FROM coursework.user";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        return resultSet;
+    }
+
+    public void updateLogin(Integer valueOf, String login) throws SQLException {
+        Statement statement = connection.createStatement();
+        String update = "update coursework.user set UserName = \"" + login + "\" where idUser = " + valueOf + "";
+        System.out.println(statement.executeUpdate(update));
+    }
+
+    public void updatePassword(Integer valueOf, String password) throws SQLException {
+        Statement statement = connection.createStatement();
+        String update = "update coursework.user set UserPass = \"" + password + "\" where idUser = " + valueOf + "";
+        System.out.println(statement.executeUpdate(update));
+    }
+
+    public void updateLoginPassword(Integer valueOf, String login, String password) throws SQLException {
+        Statement statement = connection.createStatement();
+        String update = "update coursework.user set UserName = \"" + login + "\", UserPass = \"" + password + "\" where idUser = " + valueOf + "";
+        System.out.println(statement.executeUpdate(update));
+    }
 }
