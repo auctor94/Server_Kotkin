@@ -288,4 +288,119 @@ public class ConnectSQL {
         String update = "update coursework.user set UserName = \"" + login + "\", UserPass = \"" + password + "\" where idUser = " + valueOf + "";
         System.out.println(statement.executeUpdate(update));
     }
+
+    public String findName(String name, int i) throws SQLException {
+        if (i==1) {
+            String query = "SELECT personnel.name, personnel.surname, personnel.lastName, personnel.birthday, position.posName  FROM coursework.personnel \n" +
+                    "INNER JOIN position on idPosition = Position where name =\"" + name + "\"";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+String temp = "";
+        while (resultSet.next()) {
+            temp += resultSet.getString("surname");
+            temp += " ";
+            temp += resultSet.getString("name");
+            temp += " ";
+            temp += resultSet.getString("lastName");
+            temp += " ";
+            temp += resultSet.getDate("birthday").toLocalDate().toString();
+            temp += " ";
+            temp += resultSet.getString("posName");
+            temp += "%";
+        }
+        return temp;
+        }
+        else if (i ==2 )
+        {
+            String query = "SELECT personnel.name, personnel.surname, personnel.lastName, personnel.birthday, position.posName  FROM coursework.personnel \n" +
+                    "INNER JOIN position on idPosition = Position where lastName =\"" + name + "\"";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            String temp = "";
+            while (resultSet.next()) {
+                temp += resultSet.getString("surname");
+                temp += " ";
+                temp += resultSet.getString("name");
+                temp += " ";
+                temp += resultSet.getString("lastName");
+                temp += " ";
+                temp += resultSet.getDate("birthday").toLocalDate().toString();
+                temp += " ";
+                temp += resultSet.getString("posName");
+                temp += "%";
+            }
+            return temp;
+        }
+             else if (i ==3 )
+        {
+            String query = "SELECT personnel.name, personnel.surname, personnel.lastName, personnel.birthday, position.posName  FROM coursework.personnel \n" +
+                    "INNER JOIN position on idPosition = Position where surname =\"" + name + "\"";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            String temp = "";
+            while (resultSet.next()) {
+                temp += resultSet.getString("surname");
+                temp += " ";
+                temp += resultSet.getString("name");
+                temp += " ";
+                temp += resultSet.getString("lastName");
+                temp += " ";
+                temp += resultSet.getDate("birthday").toLocalDate().toString();
+                temp += " ";
+                temp += resultSet.getString("posName");
+                temp += "%";
+            }
+            return temp;
+        }
+        else if (i ==4 )
+        {
+            String query = "SELECT personnel.name, personnel.surname, personnel.lastName, personnel.birthday, position.posName  FROM coursework.personnel \n" +
+                    "INNER JOIN position on idPosition = Position where posName =\"" + name + "\"";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            String temp = "";
+            while (resultSet.next()) {
+                temp += resultSet.getString("surname");
+                temp += " ";
+                temp += resultSet.getString("name");
+                temp += " ";
+                temp += resultSet.getString("lastName");
+                temp += " ";
+                temp += resultSet.getDate("birthday").toLocalDate().toString();
+                temp += " ";
+                temp += resultSet.getString("posName");
+                temp += "%";
+            }
+            return temp;
+        }
+        else if (i ==5 )
+        {
+            String query = "SELECT personnel.name, personnel.surname, personnel.lastName, personnel.birthday, position.posName  FROM coursework.personnel \n" +
+                    "INNER JOIN position on idPosition = Position where birthday =\"" + name + "\"";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            String temp = "";
+            while (resultSet.next()) {
+                temp += resultSet.getString("surname");
+                temp += " ";
+                temp += resultSet.getString("name");
+                temp += " ";
+                temp += resultSet.getString("lastName");
+                temp += " ";
+                temp += resultSet.getDate("birthday").toLocalDate().toString();
+                temp += " ";
+                temp += resultSet.getString("posName");
+                temp += "%";
+            }
+            return temp;
+        }
+        return null;
+    }
+
+
 }

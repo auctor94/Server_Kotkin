@@ -1,4 +1,5 @@
 package Server;
+
 import ChangeLogPass.User;
 import Charts.HiringChart;
 import Charts.PercentChart;
@@ -24,7 +25,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
 
 
 public class Server extends Thread {
@@ -91,10 +91,10 @@ public class Server extends Thread {
                         menuAdmin();
                         break;
                     case 222:
-                        //menuUser();
+                        menuUser();
                         break;
                     case 999:
-        regist();
+                        regist();
                         break;
                     case 3333:
                         System.out.println("Пользователь окончил работу");
@@ -113,15 +113,14 @@ public class Server extends Thread {
             num--;
             System.out.println("Ошибка с соединением" + e);
 
-        }
-         catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } catch (JRException e) {
             e.printStackTrace();
         }
     }
 
-//метод для проверки того, кто у нас пользователь: админ, юзер или просто неправильный ввод
+    //метод для проверки того, кто у нас пользователь: админ, юзер или просто неправильный ввод
     private int checkClient() throws IOException, ClassNotFoundException {
 
         String logPas[] = (String[]) is.readObject();
@@ -158,8 +157,8 @@ public class Server extends Thread {
                     if (111300 == (int) is.readObject()) {
                         ConnectSQL connectSQL = new ConnectSQL();
                         int t = (int) is.readObject();
-                        String reason = (String)is.readObject();
-                        connectSQL.dismissRow(t,reason);
+                        String reason = (String) is.readObject();
+                        connectSQL.dismissRow(t, reason);
                     }
                     break;
 
@@ -180,15 +179,68 @@ public class Server extends Thread {
                 case 1114:
                     tableFXML(1);
                     break;
-                    //Окно оперирования премиями
+                //Окно оперирования премиями
                 case 1115:
-                  prizeFXML(1);
+                    prizeFXML(1);
                     break;
                 case 1116:
                     reports();
 
                     break;
                 case 1117:
+                    charts();
+                    break;
+                case 1118:
+                    changeUser();
+                    break;
+                case 3333:
+                    i = 1;
+
+            }
+        }
+
+    }
+
+    private void menuUser() throws IOException, ClassNotFoundException, SQLException {
+
+
+        int i = 0;
+        do {
+            switch ((int) is.readObject()) {
+                case 2221: {
+                    charts();
+
+                }
+                break;
+
+                case 2222: {
+                    try {
+                        reports();
+                    } catch (JRException e) {
+                        e.printStackTrace();
+                    }
+                }
+                break;
+                case 2223: {
+                    viewTableResult();
+                    if (3333 != (int) is.readObject())
+                        System.out.println("Error");
+                }
+                break;
+                case 2224:
+                    poisk();
+                    break;
+                default:
+                    i = 1;
+            }
+        } while (i == 0);
+
+    }
+
+    private void charts() throws SQLException, IOException, ClassNotFoundException {
+        while (true) {
+            switch ((int) is.readObject()) {
+                case 4444: {
                     SalaryChart chart1 = new SalaryChart();
                     chart1.makeCharts();
                     List<SalaryChart> forClient = chart1.getSpisok();
@@ -201,17 +253,81 @@ public class Server extends Thread {
                     chart3.makeCharts();
                     List<HiringChart> forClient3 = chart3.getSpisok();
                     os.writeObject(forClient3);
-                    break;
-                case 1118:
-changeUser();
-                    break;
+                }
+                break;
                 case 3333:
-                    i = 1;
-
+                    os.writeObject(ConnectSQL.getIdClient());
+                    return;
             }
         }
-
     }
+
+    private void poisk() throws SQLException, IOException, ClassNotFoundException {
+        while (true) {
+            ConnectSQL connectSQL = new ConnectSQL();
+            switch ((int) is.readObject()) {
+                case 9999: {
+                    String name = (String)is.readObject();
+                    String result = connectSQL.findName(name,1);
+                    if (result == null) os.writeObject(0);
+                    else {
+                        os.writeObject(1);
+os.writeObject(result);
+                    }
+                }
+                break;
+                case 9998: {
+                    String name = (String)is.readObject();
+                    String result = connectSQL.findName(name,2);
+                    if (result == null) os.writeObject(0);
+                    else {
+                        os.writeObject(1);
+                        os.writeObject(result);
+                    }
+                }
+                break;
+                case 9997: {
+                    String name = (String)is.readObject();
+                    String result = connectSQL.findName(name,3);
+                    if (result == null) os.writeObject(0);
+                    else {
+                        os.writeObject(1);
+                        os.writeObject(result);
+                    }
+                }
+                break;
+                case 9996: {
+                    String name = (String)is.readObject();
+                    String result = connectSQL.findName(name,4);
+                    if (result == null) os.writeObject(0);
+                    else {
+                        os.writeObject(1);
+                        os.writeObject(result);
+                    }
+                }
+                break;
+                case 9995: {
+                    String name = (String)is.readObject();
+                    System.out.println(name);
+                    String result = connectSQL.findName(name,5);
+                    if (result == null) os.writeObject(0);
+                    else {
+                        os.writeObject(1);
+                        os.writeObject(result);
+                    }
+                }
+                break;
+                case 3333:
+                    os.writeObject(ConnectSQL.getIdClient());
+                    return;
+
+
+
+            }
+
+        }
+    }
+
 
     private void changeUser() throws SQLException, IOException, ClassNotFoundException {
         while (true) {
@@ -221,15 +337,15 @@ changeUser();
                     try {
 
                         ResultSet resultSet = null;
-List<User> spisok = new ArrayList<>();
-                            resultSet = connectSQL.lookUsersAll();
+                        List<User> spisok = new ArrayList<>();
+                        resultSet = connectSQL.lookUsersAll();
                         while (resultSet.next()) {
                             String id = String.valueOf(resultSet.getInt("idUser"));
                             String log = resultSet.getString("UserName");
-                                    String pass = resultSet.getString("UserPass");
+                            String pass = resultSet.getString("UserPass");
 
-                                    spisok.add(new User(log,pass,id));
-                            }
+                            spisok.add(new User(log, pass, id));
+                        }
                         os.writeObject(spisok);////////////////////&&&&&&&&&&&&&  Почему???????????????????????????
 
                     } catch (SQLException e) {
@@ -240,16 +356,16 @@ List<User> spisok = new ArrayList<>();
                 case 5556:
                     switch ((int) is.readObject()) {
                         case 1:
-                            User temp = (User)is.readObject();
-                            connectSQL.updateLogin( Integer.valueOf(temp.getId()), (String) temp.getLogin());
+                            User temp = (User) is.readObject();
+                            connectSQL.updateLogin(Integer.valueOf(temp.getId()), (String) temp.getLogin());
                             break;
                         case 2:
-                            User temp1 = (User)is.readObject();
+                            User temp1 = (User) is.readObject();
                             connectSQL.updatePassword(Integer.valueOf(temp1.getId()), (String) temp1.getPassword());
                             break;
                         case 3:
-                            User temp2 = (User)is.readObject();
-                            connectSQL.updateLoginPassword(Integer.valueOf(temp2.getId()), (String) temp2.getLogin(),(String) temp2.getPassword() );
+                            User temp2 = (User) is.readObject();
+                            connectSQL.updateLoginPassword(Integer.valueOf(temp2.getId()), (String) temp2.getLogin(), (String) temp2.getPassword());
                             break;
 
                     }
@@ -288,31 +404,30 @@ List<User> spisok = new ArrayList<>();
 
                     break;
                 case 8884:
-                     ResultSet resultset = connectSQL.getFullReport();
+                    ResultSet resultset = connectSQL.getFullReport();
                     String pathreport3 = (String) is.readObject();
                     pathreport3 += "\\Full_report.txt";
-                     while (resultset.next())
-                     {
-                         appendUsingFileWriter(pathreport3,"------------------------------------------------------------------------------------------------\n");
-                         appendUsingFileWriter(pathreport3,"IT-компания \"LaLaLand\"       Дата основания: 01 сентября 2015 года\n");
-                         appendUsingFileWriter(pathreport3,"------------------------------------------------------------------------------------------------\n");
-                         appendUsingFileWriter(pathreport3,"Штаб компании (чел.): "+String.valueOf(resultset.getInt("count1"))+"\n");
-                         appendUsingFileWriter(pathreport3,"------------------------------------------------------------------------------------------------\n");
-                         appendUsingFileWriter(pathreport3,"Количество должностей в компании: "+String.valueOf(resultset.getInt("count2"))+"\n");
-                         appendUsingFileWriter(pathreport3,"------------------------------------------------------------------------------------------------\n");
-                         appendUsingFileWriter(pathreport3,"Средний размер заработной платы (в руб.):: "+String.valueOf(resultset.getFloat("avg1"))+"\n");
-                         appendUsingFileWriter(pathreport3,"------------------------------------------------------------------------------------------------\n");
-                         appendUsingFileWriter(pathreport3,"Средний размер процента премии: "+String.valueOf(resultset.getFloat("avg2"))+"\n");
-                         appendUsingFileWriter(pathreport3,"------------------------------------------------------------------------------------------------\n");
-                         appendUsingFileWriter(pathreport3,"Минимальный размер заработной платы (в руб.): "+String.valueOf(resultset.getFloat("min1"))+"\n");
-                         appendUsingFileWriter(pathreport3,"------------------------------------------------------------------------------------------------\n");
-                         appendUsingFileWriter(pathreport3,"Максимальный размер заработной платы (в руб.): "+String.valueOf(resultset.getFloat("max1"))+"\n");
-                         appendUsingFileWriter(pathreport3,"------------------------------------------------------------------------------------------------\n");
-                         appendUsingFileWriter(pathreport3,"Количество выплаченных поощрительных премий сотрудникам: "+String.valueOf(resultset.getInt("count3")));
-                         appendUsingFileWriter(pathreport3,"------------------------------------------------------------------------------------------------\n");
-                         appendUsingFileWriter(pathreport3,"Количество уволенных работников за время сузествования компании: "+String.valueOf(resultset.getInt("count4"))+"\n");
-                         appendUsingFileWriter(pathreport3,"------------------------------------------------------------------------------------------------\n");
-                     }
+                    while (resultset.next()) {
+                        appendUsingFileWriter(pathreport3, "------------------------------------------------------------------------------------------------\n");
+                        appendUsingFileWriter(pathreport3, "IT-компания \"LaLaLand\"       Дата основания: 01 сентября 2015 года\n");
+                        appendUsingFileWriter(pathreport3, "------------------------------------------------------------------------------------------------\n");
+                        appendUsingFileWriter(pathreport3, "Штаб компании (чел.): " + String.valueOf(resultset.getInt("count1")) + "\n");
+                        appendUsingFileWriter(pathreport3, "------------------------------------------------------------------------------------------------\n");
+                        appendUsingFileWriter(pathreport3, "Количество должностей в компании: " + String.valueOf(resultset.getInt("count2")) + "\n");
+                        appendUsingFileWriter(pathreport3, "------------------------------------------------------------------------------------------------\n");
+                        appendUsingFileWriter(pathreport3, "Средний размер заработной платы (в руб.):: " + String.valueOf(resultset.getFloat("avg1")) + "\n");
+                        appendUsingFileWriter(pathreport3, "------------------------------------------------------------------------------------------------\n");
+                        appendUsingFileWriter(pathreport3, "Средний размер процента премии: " + String.valueOf(resultset.getFloat("avg2")) + "\n");
+                        appendUsingFileWriter(pathreport3, "------------------------------------------------------------------------------------------------\n");
+                        appendUsingFileWriter(pathreport3, "Минимальный размер заработной платы (в руб.): " + String.valueOf(resultset.getFloat("min1")) + "\n");
+                        appendUsingFileWriter(pathreport3, "------------------------------------------------------------------------------------------------\n");
+                        appendUsingFileWriter(pathreport3, "Максимальный размер заработной платы (в руб.): " + String.valueOf(resultset.getFloat("max1")) + "\n");
+                        appendUsingFileWriter(pathreport3, "------------------------------------------------------------------------------------------------\n");
+                        appendUsingFileWriter(pathreport3, "Количество выплаченных поощрительных премий сотрудникам: " + String.valueOf(resultset.getInt("count3")));
+                        appendUsingFileWriter(pathreport3, "------------------------------------------------------------------------------------------------\n");
+                        appendUsingFileWriter(pathreport3, "Количество уволенных работников за время сузествования компании: " + String.valueOf(resultset.getInt("count4")) + "\n");
+                        appendUsingFileWriter(pathreport3, "------------------------------------------------------------------------------------------------\n");
+                    }
                     break;
                 case 3333:
                     os.writeObject(ConnectSQL.getIdClient());
@@ -409,12 +524,11 @@ List<User> spisok = new ArrayList<>();
                             if (tabNum == 0) {
                                 os.writeObject(0);
                                 break;
-                            }
-                            else {
+                            } else {
                                 os.writeObject(1);
-                                connectSQL.insertEncorage(tabNum, Float.valueOf((String)is.readObject()), (String) is.readObject(), (LocalDate) is.readObject());
+                                connectSQL.insertEncorage(tabNum, Float.valueOf((String) is.readObject()), (String) is.readObject(), (LocalDate) is.readObject());
                             }
-                                break;
+                            break;
                     }
                     break;
                 case 3333:
@@ -533,7 +647,7 @@ List<User> spisok = new ArrayList<>();
                 String pass = (String) is.readObject();
 
                 ConnectSQL connectSQL = new ConnectSQL();
-                if (connectSQL.registerNewUser(name, pass,isAdmin)) {
+                if (connectSQL.registerNewUser(name, pass, isAdmin)) {
                     os.writeObject(1);
                 } else
                     os.writeObject(0);
